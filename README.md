@@ -78,3 +78,10 @@ This project implements a real-time frequency detection system using the ESP32 m
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Example JSON Output
+```json
+{
+  "shortFreq": 3150.25,
+  "longFreq": 3200.12
+}
