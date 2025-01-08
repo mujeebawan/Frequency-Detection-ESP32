@@ -6,8 +6,8 @@
 #include <driver/i2s.h>
 
 // Wi-Fi Configuration
-const char *ssid = "Redmi Note 10";
-const char *password = "12344321";
+const char *ssid = "YOUR-SSID";
+const char *password = "YOUR-PASSWORD";
 
 // Server Configuration
 AsyncWebServer server(80);
@@ -110,7 +110,7 @@ void processShortFFT(void *parameter) {
       sampleI2S(SHORT_SAMPLES, short_real, short_imag);
 
       if (shortFFT.majorPeak() > 0) {
-        shortFFT.windowing(FFTWindow::Hamming, FFTDirection::Forward);//reason, if we dont use , how it helps, spectrum leakage ? how we write frequency resolution?
+        shortFFT.windowing(FFTWindow::Hamming, FFTDirection::Forward);
         shortFFT.compute(FFTDirection::Forward);
         shortFFT.complexToMagnitude();
         detectedShortFreq = shortFFT.majorPeak();
